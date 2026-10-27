@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | Digital Solutions</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 8%;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content span {
+            color: #38bdf8;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 13px 24px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .hero-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 35px;
+            border-radius: 16px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 15px 35px #0003;
+        }
+
+        .hero-card .emoji {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card h2 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* Common Sections */
+        section {
+            padding: 70px 8%;
+            scroll-margin-top: 20px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px #00000010;
+        }
+
+        .service-card .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #64748b;
+        }
+
+        /* About */
+        .about {
+            background-color: #eaf5ff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-image {
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            background: #dbeafe;
+        }
+
+        .project-card:nth-child(2) .project-image {
+            background: #dcfce7;
+        }
+
+        .project-card:nth-child(3) .project-image {
+            background: #f3e8ff;
+        }
+
+        .project-info {
+            padding: 22px;
+        }
+
+        .project-info p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* Contact */
+        .contact {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin: 15px 0 25px;
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .services,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="nav-bar">
+        <div class="logo">TechNova.</div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-btn">Get Started</a>
+    </header>
+
+    <!-- Home / Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span>WELCOME TO TECHNOVA</span>
+
+                <h1>We Build Digital <span>Experiences</span></h1>
+
+                <p>
+                    We help businesses grow with modern websites,
+                    powerful web applications, and creative digital
+                    solutions designed for the future.
+                </p>
+
+                <a href="#services" class="primary-btn">
+                    Explore Our Services →
+                </a>
+            </div>
+
+            <div class="hero-card">
+                <div class="emoji">💻</div>
+                <h2>Innovate. Create. Grow.</h2>
+                <p>
+                    Turning your ideas into powerful digital products.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="section-heading">
+                <h2>Our Services</h2>
+                <p>Everything you need to build your digital presence.</p>
+            </div>
+
+            <div class="services">
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>
+                        Responsive and modern websites built to deliver
+                        excellent user experiences.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Web Applications</h3>
+                    <p>
+                        Powerful applications using modern technologies
+                        to solve real business problems.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">📈</div>
+                    <h3>Digital Growth</h3>
+                    <p>
+                        Improve your online presence through SEO,
+                        marketing, and digital strategy.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="section-heading">
+                    <h2>About TechNova</h2>
+                    <p>Technology meets creativity.</p>
+                </div>
+
+                <p>
+                    At TechNova, we believe every great business starts
+                    with a great idea. Our goal is to help startups and
+                    established businesses turn those ideas into reliable,
+                    user-friendly digital solutions.
+                </p>
+
+                <p>
+                    From planning and design to development, we focus on
+                    building solutions that make a real difference.
+                </p>
+
+                <a href="#contact" class="primary-btn">Work With Us</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-heading">
+                <h2>Our Projects</h2>
+                <p>A few examples of what we can build.</p>
+            </div>
+
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-image">🏥</div>
+                    <div class="project-info">
+                        <h3>Healthcare Website</h3>
+                        <p>
+                            A modern platform for patients to discover
+                            healthcare services and clinics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>
+                            An online shopping experience with product
+                            listings and a user-friendly interface.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-info">
+                        <h3>Business Dashboard</h3>
+                        <p>
+                            A clean dashboard concept for tracking
+                            business data and performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Have a Project in Mind?</h2>
+
+            <p>
+                Let's discuss your idea and build something amazing together.
+            </p>
+
+            <a href="mailto:hello@technova.example" class="primary-btn">
+                Contact Us
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 TechNova. All rights reserved.</p>
+        <p>Designed with ❤️ for the digital future.</p>
+    </footer>
+
+</body>
+</html>
